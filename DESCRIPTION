@@ -1,0 +1,18 @@
+Package: parmice
+Type: Package
+Title: Parallel MICE
+Version: 0.0.0.9000
+Date: 2016-04-06
+Authors@R: person("Drhlik", "Patrik", email = "patrik.drhlik@gmail.com",
+	role = c("aut", "cre"))
+Description: Package provides a parmice function that behaves exactly like a
+    mice function from the mice package but automatically executes all computations
+    in parallel.
+License: MIT (https://tldrlegal.com/license/mit-license)
+LazyData: TRUE
+Imports:
+    mice (>= 2.25),
+    parallel,
+    Rcpp (>= 0.12.3)
+LinkingTo: Rcpp
+RoxygenNote: 5.0.1
