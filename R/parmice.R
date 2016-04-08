@@ -7,7 +7,8 @@
 #' @examples
 #' imp <-parmice(nhanes, ncores = 4)
 #' plot(imp)
-parmice <- function(data, ncores = detectCores() - 1, m = 5,
+#' @export
+parmice <- function(data, ncores = parallel::detectCores() - 1, m = 5,
 				   method = vector("character", length = ncol(data)),
 				   predictorMatrix = (1 - diag(1, ncol(data))),
 				   visitSequence = (1:ncol(data))[apply(is.na(data), 2, any)],
@@ -17,7 +18,7 @@ parmice <- function(data, ncores = detectCores() - 1, m = 5,
 				   maxit = 5, diagnostics = TRUE,
 				   printFlag = TRUE, seed = NA, imputationMethod = NULL,
 				   defaultImputationMethod = NULL, data.init = NULL, ...) {
-	imputations <- mclapply(1:ncores, FUN = function(no) {
+	imputations <- parallel::mclapply(1:ncores, FUN = function(no) {
 		mice(data, m = ceiling(m / ncores), method = method, predictorMatrix = predictorMatrix,
 			 visitSequence = visitSequence, form = form, post = post,
 			 defaultMethod = defaultMethod, maxit = maxit, diagnostics = diagnostics,

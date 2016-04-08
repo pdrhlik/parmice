@@ -2,7 +2,7 @@
 % Please edit documentation in R/parmice.R
 \name{parmice}
 \alias{parmice}
-\title{Invoke mice function in parallel.}
+\title{Parallel Multivariate Imputation by Chained (PMICE)}
 \usage{
 parmice(data, ncores = detectCores() - 1, m = 5,
   method = vector("character", length = ncol(data)), predictorMatrix = (1 -
@@ -20,7 +20,7 @@ parmice(data, ncores = detectCores() - 1, m = 5,
 List of imputed datasets.
 }
 \description{
-Invoke mice function in parallel.
+Invokes mice function in parallel using a specified number of cores.
 }
 \examples{
 imp <-parmice(nhanes, ncores = 4)
