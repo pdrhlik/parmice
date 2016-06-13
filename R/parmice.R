@@ -1,9 +1,13 @@
 #' Parallel Multivariate Imputation by Chained (PMICE)
 #'
+#' @docType package
+#' @name parmice
+#'
 #' @description Invokes mice function in parallel using a specified number of cores.
 #' @param ncores Number of cores to be used.
 #' @return List of imputed datasets.
 #' @seealso \code{\link[mice]{mice}}
+#'
 #' @examples
 #' imp <-parmice(nhanes, ncores = 4)
 #' plot(imp)

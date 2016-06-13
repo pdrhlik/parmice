@@ -8,11 +8,11 @@ Authors@R: person("Drhlik", "Patrik", email = "patrik.drhlik@gmail.com",
 Description: Package provides a parmice function that behaves exactly like a
     mice function from the mice package but automatically executes all computations
     in parallel.
-License: MIT (https://tldrlegal.com/license/mit-license)
+License: GPL-3
 LazyData: TRUE
 Imports:
     mice (>= 2.25),
-    parallel (>= 3.2.0),
-    Rcpp (>= 0.12.3)
-LinkingTo: Rcpp
+    parallel (>= 3.2.0)
+Depends:
+	mice (>= 2.25)
 RoxygenNote: 5.0.1
